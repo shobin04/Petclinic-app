@@ -43,14 +43,7 @@ pipeline {
           }       
        }
     }
-  post {
-        success {
-            echo 'SonarQube analysis completed successfully.'
-        }
-        failure {
-            echo 'SonarQube analysis failed.'
-        }
-    }
+
 
 
 
