@@ -49,6 +49,6 @@ pipeline {
             echo 'SonarQube analysis failed.'
         }
     }
-}  
+
 
 
