@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage ('SCM checkout') {
            steps {
-               git 'https://github.com/shobin04/Petclinic-app.git'
+               git branch: 'main', url: 'https://github.com/shobin04/Petclinic-app.git'
             }
         } 
     }
