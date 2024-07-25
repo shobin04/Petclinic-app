@@ -15,10 +15,10 @@ pipeline {
             }
         }  
         stage('SonarQube') {
-          environment {
-            SONAR_RUNNER_HOME = tool 'SonarQube'
-            PROJECT_NAME = "ansible"
-          }
+          // environment {
+          //   SONAR_RUNNER_HOME = tool 'SonarQube'
+          //   PROJECT_NAME = "ansible"
+          // }
           steps {
             withSonarQubeEnv('SonarQube') {
                 sh '''cd /var/lib/jenkins/workspace/Petclinic-demo/
