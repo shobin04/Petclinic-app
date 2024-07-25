@@ -5,7 +5,9 @@ pipeline {
             SONAR_RUNNER_HOME = tool 'SonarQube'
             PROJECT_NAME = "ansible"
            }
-    
+    tools {
+        maven 'maven'
+    }
     stages {
         stage ('SCM checkout') {
            steps {
