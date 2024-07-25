@@ -36,7 +36,7 @@ pipeline {
     }
         stage ('deploy') {
             steps {
-                 sh"""sudo cp /var/lib/jenkins/workspace/JPetclinic-demo/target/petclinic.war /opt/tomcat/webapps
+                 sh"""sudo cp /var/lib/jenkins/workspace/Petclinic-demo/target/petclinic.war /opt/tomcat/webapps
                  sudo systemctl restart tomcat
                  """
              }
