@@ -1,11 +1,6 @@
 pipeline {
     agent any
 
-    // environment {
-    //         SONAR_RUNNER_HOME = tool 'SonarQube'
-    //         PROJECT_NAME = "ansible"
-    //       }
-    
     stages {
         stage ('SCM checkout') {
            steps {
@@ -19,7 +14,12 @@ pipeline {
                """
             }
         }  
+        stages {
         stage('SonarQube') {
+          environment {
+            SONAR_RUNNER_HOME = tool 'SonarQube'
+            PROJECT_NAME = "ansible"
+          }
           steps {
             withSonarQubeEnv('SonarQube') {
                 sh '''cd /var/lib/jenkins/workspace/Petclinic-demo/
