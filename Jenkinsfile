@@ -28,7 +28,7 @@ pipeline {
                 mvn clean verify sonar:sonar \
                -Dsonar.projectKey=ansible \
                -Dsonar.projectName='ansible' \
-               -Dsonar.host.url=http://54.227.47.234/:9000 \
+               -Dsonar.host.url=http://54.227.47.234:9000 \
                -Dsonar.token=sqp_155caf8788135eacef28b1f29f54967c309d6190
               '''
             }
