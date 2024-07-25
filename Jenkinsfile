@@ -17,11 +17,11 @@ pipeline {
         stage('SonarQube') {
           environment {
             SONAR_RUNNER_HOME = tool 'SonarQube'
-            PROJECT_NAME = "sample"
+            PROJECT_NAME = "ansible"
           }
           steps {
             withSonarQubeEnv('SonarQube') {
-                sh '''cd /var/lib/jenkins/workspace/Petclinic-demo
+                sh '''cd /var/lib/jenkins/workspace/Petclinic-demo/
                 mvn clean verify sonar:sonar \
                -Dsonar.projectKey=ansible \
                -Dsonar.projectName='ansible' \
