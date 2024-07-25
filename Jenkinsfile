@@ -23,7 +23,7 @@ pipeline {
           steps {
             withSonarQubeEnv('SonarQube') {
                 sh '''cd /var/lib/jenkins/workspace/Petclinic-demo/
-                mvn clean verify sonar:sonar \
+              mvn org.sonarsource.scanner.maven:sonar-maven-plugin:4.0.0.4121:sonar \
                -Dsonar.projectKey=ansible \
                -Dsonar.projectName='ansible' \
                -Dsonar.host.url=http://54.227.47.234/:9000 \
@@ -41,5 +41,14 @@ pipeline {
           }       
        }
     }
+  post {
+        success {
+            echo 'SonarQube analysis completed successfully.'
+        }
+        failure {
+            echo 'SonarQube analysis failed.'
+        }
+    }
+}  
 
 
