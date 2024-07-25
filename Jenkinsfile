@@ -1,10 +1,10 @@
 pipeline {
     agent any
 
-    environment {
-            SONAR_RUNNER_HOME = tool 'SonarQube'
-            PROJECT_NAME = "ansible"
-          }
+    // environment {
+    //         SONAR_RUNNER_HOME = tool 'SonarQube'
+    //         PROJECT_NAME = "ansible"
+    //       }
     
     stages {
         stage ('SCM checkout') {
